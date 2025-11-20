@@ -1,0 +1,58 @@
+# Workflow Status Template
+
+# This tracks progress through BMM methodology Analysis, Planning, and Solutioning phases.
+# Implementation phase is tracked separately in sprint-status.yaml
+
+# STATUS DEFINITIONS:
+# ==================
+# Initial Status (before completion):
+#   - required: Must be completed to progress
+#   - optional: Can be completed but not required
+#   - recommended: Strongly suggested but not required
+#   - conditional: Required only if certain conditions met (e.g., if_has_ui)
+#
+# Completion Status:
+#   - {file-path}: File created/found (e.g., "docs/product-brief.md")
+#   - skipped: Optional/conditional workflow that was skipped
+
+generated: "2025-11-20T09:57:08"
+project: "Codex-Bmad"
+project_type: "greenfield"
+selected_track: "quick-flow"
+field_type: "greenfield"
+workflow_path: "{path_files}/quick-flow-greenfield.yaml"
+workflow_status:
+  - phase: 0
+    name: "Discovery (Optional)"
+    optional: true
+    workflows:
+      - id: "brainstorm-project"
+        optional: true
+        agent: "analyst"
+        command: "brainstorm-project"
+        status: "optional"
+      - id: "research"
+        optional: true
+        agent: "analyst"
+        command: "research"
+        status: "required"
+  - phase: 1
+    name: "Planning"
+    required: true
+    workflows:
+      - id: "tech-spec"
+        required: true
+        agent: "pm"
+        command: "tech-spec"
+        status: "required"
+  - phase: 2
+    name: "Implementation"
+    required: true
+    workflows:
+      - id: "sprint-planning"
+        required: true
+        agent: "sm"
+        command: "sprint-planning"
+        status: "required"
+user_description: "เขียน เว็บโรงเรียน ปรถม ชื่อโรงเรียนบ้านแม่ทราย"
+selected_track_choice: "quick-flow"
